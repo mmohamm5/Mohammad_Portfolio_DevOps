@@ -254,42 +254,21 @@ function initializeScrollToTop() {
     });
 }
 
-// Profile Photo Functionality
+// Profile Photo Functionality (disabled for static portfolio)
 function initializeProfilePhoto() {
     const profilePhoto = document.getElementById('profile-photo');
     
-    // Add click event to change profile photo
-    profilePhoto.addEventListener('click', function() {
-        const fileInput = document.createElement('input');
-        fileInput.type = 'file';
-        fileInput.accept = 'image/*';
-        
-        fileInput.addEventListener('change', function(e) {
-            const file = e.target.files[0];
-            if (file) {
-                const reader = new FileReader();
-                reader.onload = function(e) {
-                    profilePhoto.src = e.target.result;
-                    // Store in localStorage for persistence
-                    localStorage.setItem('profilePhoto', e.target.result);
-                };
-                reader.readAsDataURL(file);
-            }
-        });
-        
-        fileInput.click();
-    });
+    // Remove any click functionality - this is a static portfolio
+    profilePhoto.style.cursor = 'default';
+    profilePhoto.removeAttribute('title');
     
-    // Load saved profile photo
-    const savedPhoto = localStorage.getItem('profilePhoto');
-    if (savedPhoto) {
-        profilePhoto.src = savedPhoto;
+    // Apply the correct positioning class if not already set
+    if (!profilePhoto.classList.contains('pos-upper')) {
+        profilePhoto.classList.add('pos-upper');
     }
-    
-    // Add tooltip
-    profilePhoto.title = 'Click to change profile photo';
-    profilePhoto.style.cursor = 'pointer';
 }
+
+// Photo positioning is now handled by CSS classes (pos-upper, pos-top, etc.)
 
 // Download Resume Functionality
 function initializeDownloadResume() {
