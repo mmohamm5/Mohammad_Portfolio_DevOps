@@ -1,0 +1,76 @@
+<svg width="400" height="200" viewBox="0 0 400 200" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="projectGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#00d4ff;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00ff88;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a1a;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2a2a2a;stop-opacity:1" />
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="200" fill="url(#bgGradient)"/>
+  
+  <!-- Terminal Window -->
+  <rect x="20" y="30" width="360" height="140" rx="8" fill="#0a0a0a" stroke="url(#projectGradient)" stroke-width="2"/>
+  
+  <!-- Terminal Header -->
+  <rect x="20" y="30" width="360" height="25" rx="8" fill="url(#projectGradient)" opacity="0.2"/>
+  
+  <!-- Terminal Buttons -->
+  <circle cx="35" cy="42" r="4" fill="#ff4757"/>
+  <circle cx="50" cy="42" r="4" fill="#ffa502"/>
+  <circle cx="65" cy="42" r="4" fill="#2ed573"/>
+  
+  <!-- Terminal Content -->
+  <text x="30" y="75" font-family="monospace" font-size="10" fill="#00d4ff">$ kubectl get pods</text>
+  <text x="30" y="90" font-family="monospace" font-size="10" fill="#00ff88">NAME                    READY   STATUS</text>
+  <text x="30" y="105" font-family="monospace" font-size="10" fill="#ffffff">frontend-deployment     3/3     Running</text>
+  <text x="30" y="120" font-family="monospace" font-size="10" fill="#ffffff">backend-deployment      2/2     Running</text>
+  <text x="30" y="135" font-family="monospace" font-size="10" fill="#ffffff">database-deployment     1/1     Running</text>
+  <text x="30" y="155" font-family="monospace" font-size="10" fill="#00d4ff">$ terraform apply</text>
+  
+  <!-- DevOps Icons -->
+  <g transform="translate(300, 80)">
+    <!-- Docker Icon -->
+    <rect x="0" y="0" width="20" height="15" rx="2" fill="none" stroke="#00d4ff" stroke-width="1"/>
+    <rect x="2" y="2" width="4" height="3" fill="#00d4ff" opacity="0.3"/>
+    <rect x="7" y="2" width="4" height="3" fill="#00d4ff" opacity="0.3"/>
+    <rect x="12" y="2" width="4" height="3" fill="#00d4ff" opacity="0.3"/>
+    <rect x="2" y="6" width="4" height="3" fill="#00d4ff" opacity="0.3"/>
+    <rect x="7" y="6" width="4" height="3" fill="#00d4ff" opacity="0.3"/>
+    <rect x="12" y="6" width="4" height="3" fill="#00d4ff" opacity="0.3"/>
+  </g>
+  
+  <g transform="translate(330, 80)">
+    <!-- Kubernetes Icon -->
+    <circle cx="10" cy="7" r="8" fill="none" stroke="#00ff88" stroke-width="1"/>
+    <path d="M10 2 L10 12 M5 7 L15 7" stroke="#00ff88" stroke-width="1"/>
+    <circle cx="10" cy="7" r="2" fill="#00ff88" opacity="0.5"/>
+  </g>
+  
+  <!-- Code Brackets -->
+  <text x="250" y="50" font-family="monospace" font-size="24" fill="url(#projectGradient)" opacity="0.3">&lt;/&gt;</text>
+  
+  <!-- Cloud Icons -->
+  <g transform="translate(320, 120)">
+    <path d="M0 10 Q0 5, 5 5 Q10 0, 15 5 Q20 5, 20 10 Q20 15, 15 15 L5 15 Q0 15, 0 10" 
+          fill="none" stroke="#00d4ff" stroke-width="1" opacity="0.5"/>
+  </g>
+  
+  <!-- Git Branch -->
+  <g transform="translate(280, 120)">
+    <circle cx="5" cy="5" r="2" fill="#00ff88" opacity="0.5"/>
+    <circle cx="15" cy="5" r="2" fill="#00ff88" opacity="0.5"/>
+    <circle cx="10" cy="15" r="2" fill="#00ff88" opacity="0.5"/>
+    <path d="M7 5 L13 5 M10 7 L10 13" stroke="#00ff88" stroke-width="1" opacity="0.5"/>
+  </g>
+  
+  <!-- Monitoring Graph -->
+  <g transform="translate(30, 180)">
+    <path d="M0 0 L10 -5 L20 -8 L30 -3 L40 -10 L50 -6 L60 -12" 
+          stroke="url(#projectGradient)" stroke-width="2" fill="none" opacity="0.6"/>
+  </g>
+</svg>
