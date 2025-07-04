@@ -90,39 +90,33 @@ function initializeFormHandling() {
     const contactForm = document.getElementById('contact-form');
     
     contactForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        // Get form data
+        // Get form data for validation
         const formData = new FormData(contactForm);
         const name = formData.get('name');
         const email = formData.get('email');
         const subject = formData.get('subject');
         const message = formData.get('message');
         
-        // Basic validation
+        // Basic validation - only prevent submission if validation fails
         if (!name || !email || !subject || !message) {
+            e.preventDefault();
             showNotification('Please fill in all fields', 'error');
             return;
         }
         
         if (!isValidEmail(email)) {
+            e.preventDefault();
             showNotification('Please enter a valid email address', 'error');
             return;
         }
         
         // Show loading state
         const submitButton = contactForm.querySelector('button[type="submit"]');
-        const originalText = submitButton.textContent;
         submitButton.textContent = 'Sending...';
         submitButton.disabled = true;
         
-        // Simulate form submission (replace with actual form handling)
-        setTimeout(() => {
-            showNotification('Thank you for your message! I\'ll get back to you soon.', 'success');
-            contactForm.reset();
-            submitButton.textContent = originalText;
-            submitButton.disabled = false;
-        }, 2000);
+        // Allow form to submit to Formspree - no e.preventDefault() here
+        // Form will redirect to Formspree's thank you page
     });
 }
 
