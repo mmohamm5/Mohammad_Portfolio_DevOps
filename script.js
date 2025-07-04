@@ -429,14 +429,15 @@ function initializeProjectLinks() {
 // Initialize project links
 document.addEventListener('DOMContentLoaded', initializeProjectLinks);
 
-// Certificate verification functionality
+// Certificate verification functionality - Allow normal link behavior
 function initializeCertificateVerification() {
     const certVerifyLinks = document.querySelectorAll('.cert-verify');
     
     certVerifyLinks.forEach(link => {
         link.addEventListener('click', function(e) {
-            e.preventDefault();
-            showNotification('Certificate verification link will be available soon!', 'info');
+            // Allow normal link behavior - no preventDefault()
+            // Link will open in new tab/window as expected
+            console.log('Certificate verification link clicked:', this.href);
         });
     });
 }
